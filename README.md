@@ -1,40 +1,96 @@
-Patient-Doctor Scheduler 🏥
-A full-stack Python application that manages medical appointments. This project explores the intersection of Object-Oriented Programming (OOP) logic and User Interface (UI) design.
+# 🏥 Patient-Doctor Scheduler
+**A Full-Stack Python Application for Medical Appointment Management**
 
-⚡ Key Features
-Constraint Management: The system enforces a 16-patient limit per 8-hour shift.
+![App Dashboard](screenshot.png)
 
-Conflict Detection: Logic prevents double-booking time slots.
+This project demonstrates the intersection of **Object-Oriented Programming (OOP)** and **User Experience (UX/UI) Design**.  
+It is built with a modular architecture that cleanly separates business logic from the presentation layer.
 
-Data Persistence: Automatic JSON saving ensures data isn't lost.
+---
 
-Modern UI: A responsive web interface built with Streamlit.
+## 🎯 The Challenge
 
-🛠️ Tech Stack
-Language: Python 3.10+
+Design a system that manages a doctor's 8-hour workday (9:00 AM – 5:00 PM) with a maximum capacity of 16 patients.  
+The system must:
 
-Interface: Streamlit
+- Prevent double-booking  
+- Validate all user input  
+- Persist data across sessions so schedules are never lost  
 
-Data Handling: Pandas, JSON
+---
 
-Testing: unittest
+## ✨ Features
 
-🚀 How to Run It
-Install Dependencies:
+### 🛠️ The Engine (Backend)
+- **OOP Logic:** Structured with `Doctor` and `Patient` classes for data integrity  
+- **Conflict Prevention:** Intelligent validation blocks overlapping or invalid bookings  
+- **Persistence:** JSON-based local database auto-saves and loads schedules  
+- **Unit Tested:** Automated test suite for backend reliability  
 
-Bash
+### 🎨 The Interface (UX/UI)
+- **Streamlit Dashboard:** Clean, modern web interface  
+- **Live Metrics:** Real-time counters for capacity, bookings, and availability  
+- **Data Visualization:** Scannable tables powered by Pandas  
 
+---
+
+## 📂 Project Architecture
+
+| Component | Responsibility |
+|---------|----------------|
+| **`app.py`** | **The View** — Streamlit frontend & UI interactions |
+| **`scheduler.py`** | **The Model** — Core logic, time-slot generation, booking rules |
+| **`test_scheduler.py`** | **Quality Assurance** — Automated backend testing |
+| **`schedule_data.json`** | **The Database** — Lightweight JSON storage |
+
+---
+
+## 🚀 Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/YOUR_USERNAME/Patient-Doctor-Scheduler.git
+cd Patient-Doctor-Scheduler
+```
+
+### 2️⃣ Install Requirements
+```bash
 pip install streamlit pandas watchdog
-Launch the App:
+```
 
-Bash
-
+### 3️⃣ Run the Application
+```bash
 streamlit run app.py
-📂 Project Structure
-app.py: The web interface.
+```
 
-scheduler.py: The core logic (Doctor/Patient classes).
+---
 
-test_scheduler.py: Automated logic tests.
+## 🧪 Technical Validation
 
-schedule_data.json: The local database.
+Run the automated test suite:
+
+```bash
+python3 test_scheduler.py
+```
+
+---
+
+## 👤 Author
+
+**Eric**  
+User Experience Designer & Creative Director  
+Exploring the bridge between design systems and functional code.
+
+---
+
+## 🎨 Make It Look Amazing on GitHub
+
+### 📸 Add a Screenshot
+Save a screenshot of the app as `screenshot.png` in the project root.
+
+### 📦 Create `requirements.txt`
+```
+streamlit
+pandas
+watchdog
+```
